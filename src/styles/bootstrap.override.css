@@ -1,11 +1,4 @@
-/* CHECK BOX */
-.is-valid .custom-control-input:checked~.custom-control-label::before,
-.is-valid .custom-control-input:checked~.custom-control-label::before {
-    border-color: rgb(40, 167, 69) !important;
-    background-color: rgb(40, 167, 69) !important;
-}
-
-.is-invalid .custom-control-input:checked~.custom-control-label::before,
-.is-invalid .custom-checkbox .custom-control-label::before {
-    border-color: rgb(220, 53, 69) !important;
+/* Uppercase first letter for feedback*/
+.invalid-feedback::first-letter {
+    text-transform: capitalize;
 }
