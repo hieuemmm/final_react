@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import classNames from 'classnames'
 import { v4 as uid } from 'uuid'
 const CheckBox = (props) => {
