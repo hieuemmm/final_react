@@ -4,6 +4,7 @@ import Input from './components/Input'
 import Select from './components/Select'
 import CheckBox from './components/CheckBox'
 import Radio from './components/Radio'
+import TextArea from './components/TextArea'
 import { isEmail, isPassword, isName, isAddress, isNumber } from './utils/ValidateUtils'
 import { currencyFormat } from './utils/FormatUtils'
 function App() {
@@ -16,6 +17,7 @@ function App() {
     numberSelect: { value: "", feedback: "" },
     GenderRadio: { value: "", feedback: "" },
     AgreeCheckBox: { value: false, feedback: "" },
+    descTextArea: { value: "", feedback: "" },
   });
   const rulesForm = useRef({
     emailInput: {
@@ -50,7 +52,12 @@ function App() {
     },
     AgreeCheckBox: {
       required: true,
-    }
+    },
+    descTextArea: {
+      required: true,
+      maxLength: 200,
+      callBack: () => true,
+    },
   });
   //HANDLE EVENT
   const handelOnSubmit = () => {
@@ -62,6 +69,7 @@ function App() {
     validate({ value: form.numberSelect.value, nameFormElement: "numberSelect" });
     validate({ value: form.GenderRadio.value, nameFormElement: "GenderRadio" });
     validate({ value: form.AgreeCheckBox.value, nameFormElement: "AgreeCheckBox" });
+    validate({ value: form.descTextArea.value, nameFormElement: "descTextArea" });
     let isSubmit = true;
     for (const key in form) {
       isSubmit &= !form[key].feedback;
@@ -130,6 +138,13 @@ function App() {
           nameInput={"dateTimeInput"}
           typeInput={"datetime-local"}
           valueInput={form.dateTimeInput}
+          validate={validate}
+        />
+        <TextArea labelName={"Description:"}
+          inline
+          nameInput={"descTextArea"}
+          row={4}
+          valueInput={form.descTextArea}
           validate={validate}
         />
         <Select labelName={"Pick number:"}
