@@ -8,7 +8,7 @@ const Group = (props) => {
 
     const handelOnChange = (valueCurrent) => {
         validate({
-            value: valueCurrent,
+            newValue: valueCurrent,
             nameFormElement: nameRadio,
             lableNameFormElement: labelName,
         })

@@ -13,7 +13,7 @@ const CheckBox = (props) => {
                     className="custom-control-input"
                     checked={valueInput.value}
                     onChange={event => validate({
-                        value: event.target.checked,
+                        newValue: event.target.checked,
                         nameFormElement: nameCheckBox,
                         lableNameFormElement: labelName,
                     })}

@@ -14,7 +14,7 @@ const Select = (props) => {
                     className={classNames("custom-select", { "is-invalid": valueInput.feedback })}
                     value={valueInput.value}
                     onChange={event => validate({
-                        value: event.target.value,
+                        newValue: event.target.value,
                         nameFormElement: nameSelect,
                         lableNameFormElement: labelName
                     })}

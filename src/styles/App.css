@@ -1,3 +1,14 @@
-.table td span {
-    display: block !important;
+[data-control-color="Must do"] {
+    background-color: var(--danger) !important;
+    color: white;
+}
+
+[data-control-color="Could do"] {
+    background-color: var(--warning) !important;
+    color: black;
+}
+
+[data-control-color="Can do"] {
+    background-color: var(--primary) !important;
+    color: white;
 }

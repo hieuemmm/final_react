@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
+import AppTest from './AppTest';
+import AppFinal from './AppFinal';
 import App from './App';
 // Boostrap
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,7 +14,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className='m-5'>
+      <AppTest />
+      {/* <AppFinal /> */}
+      {/* <App /> */}
+    </div>
   </React.StrictMode>
 );
 

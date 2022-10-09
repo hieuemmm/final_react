@@ -6,7 +6,7 @@ const Pagination = ({ pagination, setPagination }) => {
         if (currentPage !== newCurrentPage) {
             setPagination({
                 ...pagination,
-                currentPage: currentPage - 1,
+                currentPage: newCurrentPage,
             })
         }
     }
@@ -14,7 +14,7 @@ const Pagination = ({ pagination, setPagination }) => {
     //render code HTML with JS
     const elementsOfpagination = [];
     for (let index = 1; index <= pageSize; index++) {
-        elementsPagination.push((
+        elementsOfpagination.push((
             <li key={index} className={currentPage == index ? 'page-item active' : ''}>
                 <button className="page-link" onClick={() => handleChangeCurrentPage(index)}>
                     {index}
@@ -27,7 +27,7 @@ const Pagination = ({ pagination, setPagination }) => {
             <nav aria-label="Page navigation ">
                 <ul className="pagination">
                     {pageSize !== 1 && (
-                        <li className={classNames("page-item", { "disabled": currentPage !== 1 })}>
+                        <li className={classNames("page-item", { "disabled": currentPage === 1 })}>
                             <button className="page-link" onClick={() => handleChangeCurrentPage(currentPage - 1)} >
                                 Previous
                             </button>
@@ -35,7 +35,7 @@ const Pagination = ({ pagination, setPagination }) => {
                     )}
                     {elementsOfpagination}
                     {pageSize !== 1 && (
-                        <li className={classNames("page-item", { "disabled": currentPage !== pageSize })}>
+                        <li className={classNames("page-item", { "disabled": currentPage === pageSize })}>
                             <button className="page-link" onClick={() => handleChangeCurrentPage(currentPage + 1)} >
                                 Next
                             </button>

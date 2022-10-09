@@ -25,7 +25,7 @@ function Input(props) {
                     onChange={(event) => { setMyValueInput(event.target.value) }}
                     onBlur={() =>
                         validate({
-                            value: myValueInput,
+                            newValue: myValueInput,
                             nameFormElement: nameInput,
                             lableNameFormElement: labelName,
                         })
