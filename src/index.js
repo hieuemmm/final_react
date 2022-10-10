@@ -15,9 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div className='m-5'>
-      <AppTest />
+      {/* <AppTest /> */}
       {/* <AppFinal /> */}
-      {/* <App /> */}
+      <App />
     </div>
   </React.StrictMode>
 );

@@ -34,3 +34,31 @@ export function isNumber(value) {
     }
     return "";
 }
+export function isAlphabet(value) {
+    let regex = /[a-zA-Z ]+/;
+    if (!regex.test(value)) {
+        return "Must be alphabet!";
+    }
+    return "";
+}
+export function isTitle(value) {
+    let regex = /^[a-zA-Z0-9\s]+[a-zA-Z0-9\s]$/;
+    if (!regex.test(value)) {
+        return "Invalid title!";
+    }
+    return "";
+}
+export function isAuthor(value) {
+    let regex = /^[a-zA-Z0-9\s]+[a-zA-Z0-9\s]$/;
+    if (!regex.test(value)) {
+        return "Invalid author!";
+    }
+    return "";
+}
+export function isReleaseYear(value) {
+    let number = Number(value);
+    if (number < 1990) {
+        return "Must greater than or equal 1990!";
+    }
+    return "";
+}

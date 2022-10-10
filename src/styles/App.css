@@ -12,3 +12,13 @@
     background-color: var(--primary) !important;
     color: white;
 }
+
+.book-image {
+    max-width: 100%;
+    width: 50px;
+    height: 40px;
+}
+
+.body {
+    background-color: #1e90ff;
+}

@@ -9,6 +9,7 @@ import Pagination from './components/Pagination'
 import { isEmail, isPassword, isName, isAddress, isNumber } from './utils/ValidateUtils'
 import { currencyFormat } from './utils/FormatUtils'
 import dataNote from "./dataNote.json"
+import image from "./image.png"
 const INIT_FORM = {
     id: { value: "", feedback: "" },
     note: { value: "", feedback: "" },
@@ -16,22 +17,119 @@ const INIT_FORM = {
     groupNote: { value: "", feedback: "" },
 };
 function App() {
+    const [books, setBooks] = useState([]);
     //INIT
     return (
         <div className="row">
-            <div className='col-12 pr-0'>
-                {/* Seach + Order */}
+            {/* BOOK */}
+            <div className='border p-3 col-7'>
+                <div className='h4 border-bottom-1'>Book-list</div>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Public date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div className='d-flex align-content-center'>
+                                    <img className="book-image" src={image} />
+                                    <div>
+                                        <strong>Text Text Text</strong>
+                                        <div>Text Text Text</div>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>âsas</td>
+                            <td>âsas</td>
+                            <td>âsas</td>
+                            <td>âsas</td>
+                            <td>
+                                <button type="button" className="btn btn-primary mr-2">Edit</button>
+                                <button type="button" className="btn btn-danger" onClick={() => true}>Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div className='col-7 '>
-                <div className='row p-2'>
-                    {/* Table + Cards */}
+            <div className='col-5'>
+                {/* FORM */}
+                <div className='border p-3'>
+                    <div className='h4 border-bottom-1'>Book-list</div>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Book</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Public date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div className='d-flex align-content-center'>
+                                        <img className="book-image" src={image} />
+                                        <div>
+                                            <strong>Text Text Text</strong>
+                                            <div>Text Text Text</div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>âsas</td>
+                                <td>âsas</td>
+                                <td>âsas</td>
+                                <td>âsas</td>
+                                <td>
+                                    <button type="button" className="btn btn-primary mr-2">Edit</button>
+                                    <button type="button" className="btn btn-danger" onClick={() => true}>Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                {/* <Pagination pagination={pagination} setPagination={setPagination} /> */}
-            </div>
-            <div className='col-5 border p-4 mt-3'>
-                {/* Form items */}
-                <div className='d-flex justify-content-end w-100'>
-                    <button className='btn btn-light border mr-2' onClick={() => console.log(form)}>Show form</button>
+                {/* CARD LIST */}
+                <div className='border p-3 mt-3'>
+                    <div className='h4 border-bottom-1'>Cart-list</div>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Book</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Prices</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div className='d-flex align-content-center'>
+                                        <img className="book-image" src={image} />
+                                        <div>
+                                            <strong>Text Text Text</strong>
+                                            <div>Text Text Text</div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>âsas</td>
+                                <th>âsas</th>
+                                <td>
+                                    <i class="bi bi-trash-fill text-danger"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th>Total</th>
+                                <th>Total</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div >
